@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>hiSbe - how it Should be</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Theme CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" integrity="sha384-0s5Pv64cNZJieYFkXYOTId2HMA2Lfb6q2nAcx2n0RTLUnCAoTTsS0nKEO27XyKcY" crossorigin="anonymous"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" integrity="sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo" crossorigin="anonymous"></script>
+    <![endif]-->
+
+<!-- GOOGLE ANALYTICS -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-97661285-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!--Google maps script-->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuXHhm2BZpCuaRfym_-FrqxpKoVtdwKxY&callback=initMap"
+  type="text/javascript"></script>
+        <script type="text/javascript">
+            // When the window has finished loading create our google map below
+            google.maps.event.addDomListener(window, 'load', init);
+        
+            function init() {
+                // Basic options for a simple Google Map
+                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+                var mapOptions = {
+                    // How zoomed in you want the map to start at (always required)
+                    zoom: 13,
+
+                    //disable scroll wheel zoom function
+                    scrollwheel:  false,
+
+                    // The latitude and longitude to center the map (always required)
+                    center: new google.maps.LatLng(50.8288820, -0.1357630), // hiSbe York Place
+
+                    // How you would like to style the map. 
+                    // This is where you would paste any style found on Snazzy Maps.
+                    styles: 
+                    [
+    {
+        "featureType": "all",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#f5f5f5"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#441a1c"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#f5f5f5"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.neighborhood",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.land_parcel",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.land_parcel",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#441a1c"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#eeeeee"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#441a1c"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.business",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.business",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#21d6e3"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#e5e5e5"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#441a1c"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#21d6e3"
+            },
+            {
+                "weight": 1
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#441a1c"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#441a1c"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#21d6e3"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#616161"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#757575"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#9e9e9e"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit.line",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#e5e5e5"
+            }
+        ]
+    },
+    {
+        "featureType": "transit.station",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#eeeeee"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#76e9f1"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#9e9e9e"
+            }
+        ]
+    }
+]
+                };
+
+                // Get the HTML DOM element that will contain your map 
+                // We are using a div with id="map" seen below in the <body>
+                var mapElement = document.getElementById('map');
+
+                // Create the Google Map using our element and options defined above
+                var map = new google.maps.Map(mapElement, mapOptions);
+
+                // Let's also add a marker while we're at it
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(50.8288820, -0.1357630),
+                    map: map,
+                    title: 'hiSbe Food CIC'
+                });
+            }
+        </script>
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!--Sticky socials-->
+
+    <div class= "stickysocials pull-left hidden-sm hidden-xs" data-spy="affix">
+        <ul class="stickysocialslist">
+            <li><a href="https://twitter.com/hiSbe_Food" target="blank"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.facebook.com/hiSbeFood/" target="blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/hisbe_cic/" target="blank"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top"><img class="arrow" src="img/arrow.png" alt="">hiSbe</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About us</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#whatwesell">What we sell</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#hisbeway">The hiSbe way</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#team">Team</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact us</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="hisbeforhire.html" target="_blank">Hisbe For Hire</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-heading">how it Should be</div>
+                <div class="intro-lead-in">Welcome to the Supermarket revolution!</div>
+                <!--<a href="#about" class="page-scroll btn btn-xl">Tell Me More</a>-->
+            </div>
+        </div>
+    </header>
+
+    <!-- Opening hours Section-->        
+
+    <aside class="opening">
+        <div class="container">
+            <div class="row">
+                <h4><i class="fa fa-map-marker" aria-hidden="true"></i> 20-21 York Place, Brighton, BN1 4GU | Open daily 9am - 8pm | <i class="fa fa-phone" aria-hidden="true"></i> 01273 608028</h4>
+            </div>
+        </div>
+    </aside>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">About us</h2>
+                    <h3 class="section-subheading text-muted">hiSbe Food is <b>a different kind of supermarket!</b></br>
+                    We’re on a mission to break the mould, by <b>putting customers, suppliers and employees first.</b></h3>
+                </div>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/ZRvunbC_xzE?rel=0" style="border:none;" allowfullscreen></iframe>
+            </div>
+            <div class="row text-center">
+                <h2 class="section-heading">Why we’re different</h2>
+                <h3 class="section-subheading text-muted">hiSbe has a <b>social enterprise</b> business model that serves the interests of <b>people and communities</b></h3>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Focusing on food</h4>
+                    <p class="text-muted">Making the good stuff more affordable</p>
+                </div>
+                <div class="col-md-3">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-info fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Honest information</h4>
+                    <p class="text-muted">So you always know what you're buying</p>
+                </div>
+                <div class="col-md-3">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-lemon-o fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Responsible sourcing</h4>
+                    <p class="text-muted">We care where our food comes from &amp; how it's been made</p>
+                </div>
+                <div class="col-md-3">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-money fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Fair price promise</h4>
+                    <p class="text-muted">We promise to pay and charge what’s fair</p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-recycle fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">No waste</h4>
+                    <p class="text-muted">Refusing to throw away food that can be eaten</p>
+                </div>
+                <div class="col-md-3">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-users fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Living wage</h4>
+                    <p class="text-muted">Paying above the Living Wage Foundation's living wage to all our staff</p>
+                </div>
+                <div class="col-md-3">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-hand-peace-o fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Trading fairly</h4>
+                    <p class="text-muted">Fair pay and terms for our suppliers so they can bring you their best</p>
+                </div>
+                <div class="col-md-3">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-map-signs fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Using the hiSbe way</h4>
+                    <p class="text-muted">To choose only brands &amp; suppliers who do things responsibly</p>
+                </div>
+            </div>
+        </div>
+        </br></br></br>
+        <div class="row">
+            <div class="container">
+                <h2 class="section-heading text-center">That's how it Should be!</h2>
+                <div class="col-lg-8 col-lg-offset-2 text-center info">hiSbe runs on a <b>social enterprise</b> model that puts <b>happiness before profits</b>. Instead of maximising short-term profit, like big supermarkets, <b>we pay and charge what’s fair</b>. Employees get above the living wage, suppliers get a good deal and prices are set so customers pay a fair price for well-sourced goods. hiSbe sells everyday food, but <b>not the big brands</b>. We prioritise <b>local products</b> and work with suppliers and wholesalers who care about <b>health, sustainability and trading fairly</b>.</div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- What we sell -->
+    <section id="whatwesell" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">What we sell</h2>
+                    <h3 class="section-subheading text-muted">At hiSbe, we prioritise <b>small, local producers </b>and <b>brands that trade responsibly.</b></br>For you, this means a healthier, more ethical range of options.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 portfolio-item">
+                    <a href="#sellModal1" class="portfolio-link" data-toggle="modal">
+                        <img src="img/sell/veg.jpg" class="img-responsive img-circle" alt="">
+                    </a>
+                    <div class="portfolio-caption text-center">
+                        <h4 class="service-heading">Fruit &amp; veg</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 portfolio-item">
+                    <a href="#sellModal2" class="portfolio-link" data-toggle="modal">
+                        <img src="img/sell/dairy.jpg" class="img-responsive img-circle" alt="">
+                    </a>
+                    <div class="portfolio-caption text-center">
+                        <h4 class="service-heading">Dairy</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 portfolio-item">
+                    <a href="#sellModal3" class="portfolio-link" data-toggle="modal">
+                        <img src="img/sell/meat.jpg" class="img-responsive img-circle" alt="">
+                    </a>
+                    <div class="portfolio-caption text-center">
+                        <h4 class="service-heading">Meat</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 portfolio-item">
+                    <a href="#sellModal4" class="portfolio-link" data-toggle="modal">
+                        <img src="img/sell/bread.jpg" class="img-responsive img-circle" alt="">
+                    </a>
+                    <div class="portfolio-caption text-center">
+                        <h4 class="service-heading">Bread</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 portfolio-item">
+                    <a href="#sellModal5" class="portfolio-link" data-toggle="modal">
+                        <img src="img/sell/fish.jpg" class="img-responsive img-circle" alt="">
+                    </a>
+                    <div class="portfolio-caption text-center">
+                        <h4 class="service-heading">Fish</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 portfolio-item">
+                    <a href="#sellModal6" class="portfolio-link" data-toggle="modal">
+                        <img src="img/sell/groceries.jpg" class="img-responsive img-circle" alt="">
+                    </a>
+                    <div class="portfolio-caption text-center">
+                        <h4 class="service-heading">Groceries</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 portfolio-item">
+                    <a href="#sellModal7" class="portfolio-link" data-toggle="modal">
+                        <img src="img/sell/dispensers.jpg" class="img-responsive img-circle" alt="">
+                    </a>
+                    <div class="portfolio-caption text-center">
+                        <h4 class="service-heading">Dispensers</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 portfolio-item">
+                    <a href="#sellModal8" class="portfolio-link" data-toggle="modal">
+                        <img src="img/sell/freefrom.jpg" class="img-responsive img-circle" alt="">
+                    </a>
+                    <div class="portfolio-caption text-center">
+                        <h4 class="service-heading">Free-from</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 portfolio-item">
+                    <a href="#sellModal9" class="portfolio-link" data-toggle="modal">
+                        <img src="img/sell/drinks.jpg" class="img-responsive img-circle" alt="">
+                    </a>
+                    <div class="portfolio-caption text-center">
+                        <h4 class="service-heading">Drinks</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 portfolio-item">
+                    <a href="#sellModal10" class="portfolio-link" data-toggle="modal">
+                        <img src="img/sell/household.jpg" class="img-responsive img-circle" alt="">
+                    </a>
+                    <div class="portfolio-caption text-center">
+                        <h4 class="service-heading">Household</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 portfolio-item">
+                    <a href="#sellModal11" class="portfolio-link" data-toggle="modal">
+                        <img src="img/sell/frozen.jpg" class="img-responsive img-circle" alt="">
+                    </a>
+                    <div class="portfolio-caption text-center">
+                        <h4 class="service-heading">Frozen</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 portfolio-item">
+                    <a href="#sellModal12" class="portfolio-link" data-toggle="modal">
+                        <img src="img/sell/cafe.jpg" class="img-responsive img-circle" alt="">
+                    </a>
+                    <div class="portfolio-caption text-center">
+                        <h4 class="service-heading">Cafe</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="hisbeway">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">the hisbe way</h2>
+                    <h3 class="section-subheading text-muted">At hiSbe we think that putting happiness first is a route to <b>a more fair, responsible and sustainable food industry.</b></br>So we consider the <b>happiness of people, animals and the planet</b> when it comes to sourcing our products.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-12 portfolio-item">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                        <img src="img/portfolio/golocal-tn.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4 class="service-heading">Go local</h4>
+                        <p class="text-muted">For a happy community</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 portfolio-item">
+                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                        <img src="img/portfolio/pickseasonal-tn.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4 class="service-heading">Pick seasonal</h4>
+                        <p class="text-muted">For happy growing</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 portfolio-item">
+                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                        <img src="img/portfolio/protectnature-tn.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4 class="service-heading">Protect nature</h4>
+                        <p class="text-muted">For a happy planet</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 portfolio-item">
+                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                        <img src="img/portfolio/supportethical-tn.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4 class="service-heading">Support ethical</h4>
+                        <p class="text-muted">For happy farmers</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 portfolio-item">
+                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                        <img src="img/portfolio/thinkwelfare-tn.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4 class="service-heading">Think Welfare</h4>
+                        <p class="text-muted">For happy animals</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 portfolio-item">
+                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                        <img src="img/portfolio/savefish-tn.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4 class="service-heading">Save fish</h4>
+                        <p class="text-muted">For happy seas</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 portfolio-item">
+                    <a href="#portfolioModal7" class="portfolio-link" data-toggle="modal">
+                        <img src="img/portfolio/considerwaste-tn.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4 class="service-heading">Consider waste</h4>
+                        <p class="text-muted">For a happy environment</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal8" class="portfolio-link" data-toggle="modal">
+                        <img src="img/portfolio/choosereal-tn.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4 class="service-heading">Choose real</h4>
+                        <p class="text-muted">For happy bodies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Meet the Team</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3 class="section-subheading text-muted">These three <b>run the business</b>:</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="img/team/2.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Amy Anslow</h4>
+                        <p class="text-muted">Founder-Director</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="mailto:amy.anslow@hisbe.co.uk" target="_top"><i class="fa fa-envelope"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="img/team/1.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Ruth Anslow</h4>
+                        <p class="text-muted">Founder-Director</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="mailto:ruth.anslow@hisbe.co.uk" target="_top"><i class="fa fa-envelope"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="img/team/3.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Jack Simmonds</h4>
+                        <p class="text-muted">Founder-Director</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="mailto:jack.simmonds@hisbe.co.uk" target="_top"><i class="fa fa-envelope"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <p class="large text-muted">Want to hire a hiSbe director to further your business? Interested in what becoming a CIC can do for you? Want to interview Jack, Ruth or Amy for your disseration?</p></br>
+                    <a href="hisbeforhire.html" class="page-scroll btn btn-xl" target="blank">Hisbe for hire!</a>
+                </div>
+            </div>-->
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <p class="large text-muted">And these lot look after the <b>York Place store</b>:</p></br>
+                </div>
+            </div>
+            <div class="row">
+                <img src="img/team.jpg" class="img-responsive img-centered" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Aside -->
+    <!--<<aside class="clients">
+        <div class="container">
+            <div class="row">
+                <h3>Awards logos will go here</h3>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="img/logos/envato.jpg" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="img/logos/designmodo.jpg" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="img/logos/themeforest.jpg" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="img/logos/creative-market.jpg" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </aside>-->
+
+    <!--GOOGLE MAP-->
+    <div id="map"></div>
+    <aside class="opening">
+        <div class="container">
+            <div class="row">
+                <h4><i class="fa fa-map-marker" aria-hidden="true"></i> 20-21 York Place, Brighton, BN1 4GU | Open daily 9am - 8pm | <i class="fa fa-phone" aria-hidden="true"></i> 01273 608028</h4>
+            </div>
+        </div>
+    </aside>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Contact Us</h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button type="submit" class="btn btn-xl">Hit Send!</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>    
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="col-lg-12"></div>
+                    <div class="col-lg-5 col-lg-offset-1 text-center supplier">
+                        <h3>Are you a potential supplier?</h3>
+                        <p>Please contact us at <a href="mailto:supply-yorkplace@hisbe.co.uk" target="_top">supply-yorkplace@hisbe.co.uk</a> or send clearly marked samples directly to:</p>
+                        <p><b>hiSbe, 20-21 York Place, Brighton, BN1 4GU.</b></p>
+                        <p>We receive a great number of requests, unfortunately we can only get back in touch if we're interested in stocking your product!</p>
+                    </div>
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-5 col-lg-offset-1 text-center supplier">
+                        <h3>Are you a potential supplier?</h3>
+                        <p>Please contact us at <a href="mailto:supply-yorkplace@hisbe.co.uk" target="_top">supply-yorkplace@hisbe.co.uk</a> or send clearly marked samples directly to:</p>
+                        <p><b>hiSbe, 20-21 York Place, Brighton, BN1 4GU.</b></p>
+                        <p>We receive a great number of requests, unfortunately we can only get back in touch if we're interested in stocking your product!</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; hiSbe 2017</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://twitter.com/hiSbe_Food" target="blank"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="https://www.facebook.com/hiSbeFood/" target="blank"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="https://www.instagram.com/hisbe_cic/" target="blank"><i class="fa fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#portfolioPrivacyPolicy" class="portfolio-link" data-toggle="modal">Privacy Policy</a>
+                        </li>
+                        <!--<li><a href="#">Terms of Use</a>
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Privacy Policy Modal -->
+
+    <div class="portfolio-modal modal fade" id="portfolioPrivacyPolicy" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Privacy policy</h2>
+                                <h3>Owner</h3>
+                                <p>This website is owned by hiSbe Food CIC, 20-21 York Place, BN1 4GU, Brighton, United Kingdom.
+                                <h3>Your privacy</h3>
+                                <p>hiSbe is committed to maintaining the trust of its customers and the visitors to our website. We are not in the business of selling, renting or trading email lists with other companies for marketing purposes and we never will be.</p>
+                                <h3>Personal information</h3>
+                                <p>Personal information refers to any information that may be used to identify you, such as; your name, email address or phone number.</p>
+                                <p>You can browse our website without providing any of this information. We do collect anonymous data to analyse traffic but this is not tied in to your IP address.</p>
+                                <p>However, there are actions on our website that require you to provide personal details, such as our contact form. This information is used exclusively to respond to your query and is not saved or stored in a database or other system.</p>
+                                <h3>Links to other websites</h3>
+                                <p>We cannot be responsible for the protection of your data on websites that you may link to from this website.</p>
+                                <h3>Consent</h3>
+                                <p>By using this website, you consent to the collection and use of the information you provide tu us as outlined in this Privacy Policy. We may change this Privacy Policy in future without notice, so please check back occasionally. If we change our Privacy Policy, we will publish the changes on this page.</p>
+                                <p>For any questions or concerns, you can email us at <a href="mailto:hello@hisbe.co.uk?Subject=Privacy%20Policy" target="_top">hello@hisbe.co.uk.</a></p>
+                                <button type="button" class="btn btn-primary center-block" data-dismiss="modal"><i class="fa fa-times"></i> Back to hiSbe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- WHAT WE SELL MODALS -->
+
+    <!-- Sell Modal 1 -->
+    <div class="portfolio-modal modal fade" id="sellModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Fruit &amp; veg</h2>
+                                <img class="img-responsive img-centered img-circle" src="img/sell/veg.jpg" alt="">
+                                <p>Most supermarkets import huge volumes of fruit and veg all year round. We prioritise local, seasonal and British from producers who work with nature, not against it.</p>
+                                <h3 class="item-intro text-muted">The hiSbe Way</h3>
+                                <ul class="fa-ul">
+                                    <li><i class="fa-li fa fa-check" aria-hidden="true"></i>Saving on unnecessary food miles, resources and use of chemicals.</li>
+                                    <li><i class="fa-li fa fa-check" aria-hidden="true"></i>Supporting small local and British producers.</li>
+                                    <li><i class="fa-li fa fa-check" aria-hidden="true"></i>Making the most of what grows in its natural season.</li>
+                                </ul>
+                                <h3 class="item-intro text-muted">For you this means…</h3>
+                                <p>A variety of fresh and naturally tasty produce that’s sourced with people and planet in mind.</p>
+                                <button type="button" class="btn btn-primary center-block" data-dismiss="modal"><i class="fa fa-times"></i> Back to hiSbe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sell Modal 2 -->
+    <div class="portfolio-modal modal fade" id="sellModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Dairy</h2>
+                                <img class="img-responsive img-centered img-circle" src="img/sell/dairy.jpg" alt="">
+                                <p>British dairy farmers are regularly forced to accept unfair prices for their milk. We support responsible brands and small dairy farmers and give them a fair price.</p>
+                                <h3 class="item-intro text-muted">The hiSbe Way</h3>
+                                <ul class="fa-ul">
+                                    <li><i class="fa-li fa fa-check" aria-hidden="true"></i>Enabling animals to be raised in good living conditions.</li>
+                                    <li><i class="fa-li fa fa-check" aria-hidden="true"></i>Ensuring farmers are not forced to over-milk the animals.</li>
+                                    <li><i class="fa-li fa fa-check" aria-hidden="true"></i>Helping British dairy farmers stay in business.</li>
+                                </ul>
+                                <h3 class="item-intro text-muted">For you this means…</h3>
+                                <p>Nutritious dairy products from healthy animals and happier farmers.</p>
+                                <button type="button" class="btn btn-primary center-block" data-dismiss="modal"><i class="fa fa-times"></i> Back to hiSbe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sell Modal 3 -->
+    <div class="portfolio-modal modal fade" id="sellModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Meat</h2>
+                                <img class="img-responsive img-centered img-circle" src="img/sell/meat.jpg" alt="">
+                                <p>Most of the meat sold in supermarkets comes from factory farms here or abroad. Our meat comes directly from small, responsible family farms in Sussex.</p>
+                                <h3 class="item-intro text-muted">The hiSbe Way</h3>
+                                <ul class="fa-ul">
+                                    <li><i class="fa-li fa fa-check" aria-hidden="true"></i>Making sure animals are reared in conditions where they can live naturally.</li>
+                                    <li><i class="fa-li fa fa-check" aria-hidden="true"></i>Avoiding growth hormones and unnecessary drugs.</li>
+                                    <li><i class="fa-li fa fa-check" aria-hidden="true"></i>Refusing meat that is dyed or bulked out with water, additives or bits of other animals.</li>
+                                </ul>
+                                <h3 class="item-intro text-muted">For you this means…</h3>
+                                <p>Fresh high-quality meat that looks and tastes how it should.</p>
+                                <button type="button" class="btn btn-primary center-block" data-dismiss="modal"><i class="fa fa-times"></i> Back to hiSbe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sell Modal 4 -->
+    <div class="portfolio-modal modal fade" id="sellModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Bread</h2>
+                                <img class="img-responsive img-centered img-circle" src="img/sell/bread.jpg" alt="">
+                                <p>Our bread is handmade by local bakers in Brighton and Hove and gets delivered to the store fresh every day. We offer gluten free, spelt, sourdough and rye bread, as well as white and wholemeal sliced and whole.</p>
+                                <button type="button" class="btn btn-primary center-block" data-dismiss="modal"><i class="fa fa-times"></i> Back to hiSbe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sell Modal 5 -->
+    <div class="portfolio-modal modal fade" id="sellModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Fish</h2>
+                                <img class="img-responsive img-centered img-circle" src="img/sell/fish.jpg" alt="">
+                                <p>Many supermarkets sell species from overfished stocks and industrial scale fish farms. We only buy fish that are not on the MSC “fish to avoid list” and are completely traceable.
+                                <h3 class="item-intro text-muted">The hiSbe Way</h3>
+                                <ul class="fa-ul">
+                                    <li><i class="fa-li fa fa-check" aria-hidden="true"></i>Protecting the health of our oceans and the future supply of fish.</li>
+                                    <li><i class="fa-li fa fa-check" aria-hidden="true"></i>Choosing healthy, natural fresh fish that hasn’t been dyed or fed unnecessary chemicals.</li>
+                                    <li><i class="fa-li fa fa-check" aria-hidden="true"></i>Reducing the harmful impact of industrial fishing on the marine environment.</li>
+                                </ul>
+                                <h3 class="item-intro text-muted">For you this means…</h3>
+                                <p>A selection of natural fresh fish that supports healthy seas.</p>
+                                <button type="button" class="btn btn-primary center-block" data-dismiss="modal"><i class="fa fa-times"></i> Back to hiSbe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Sell Modal 6 -->
+    <div class="portfolio-modal modal fade" id="sellModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Groceries</h2>
+                                <img class="img-responsive img-centered img-circle" src="img/sell/groceries.jpg" alt="">
+                                <p>Big supermarkets don’t mind selling unhealthy or unethical food, as long as it makes money. We choose products from suppliers who show respect for people‘s health and welfare.</p>
+                                <h3 class="item-intro text-muted">The hiSbe Way</h3>
+                                <ul class="fa-ul">
+                                    <li><i class="fa-li fa fa-check" aria-hidden="true"></i>Giving exposure to smaller, more responsible brands.</li>
+                                    <li><i class="fa-li fa fa-check" aria-hidden="true"></i>Using wholesalers recognised for their ethical policies or run as worker co-operatives.</li>
+                                    <li><i class="fa-li fa fa-check" aria-hidden="true"></i>Prioritising products made with real ingredients.</li>
+                                </ul>
+                                <h3 class="item-intro text-muted">For you this means…</h3>
+                                <p>A select range of everyday groceries made up of more healthy and ethical options.</p>
+                                <button type="button" class="btn btn-primary center-block" data-dismiss="modal"><i class="fa fa-times"></i> Back to hiSbe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Sell Modal 7 -->
+    <div class="portfolio-modal modal fade" id="sellModal7" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Dispensers</h2>
+                                <img class="img-responsive img-centered img-circle" src="img/sell/dispensers.jpg" alt="">
+                                <p>Supermarkets waste thousands of tons of food and packaging every day. We offer a range of good quality dry food by weight to avoid waste.</p>
+                                <h3 class="item-intro text-muted">The hiSbe Way</h3>
+                                <ul class="fa-ul">
+                                    <li><i class="fa-li fa fa-check" aria-hidden="true"></i>Reducing the amount of food that is thrown away.</li>
+                                    <li><i class="fa-li fa fa-check" aria-hidden="true"></i>Preventing packaging from going to landfill.</li>
+                                    <li><i class="fa-li fa fa-check" aria-hidden="true"></i>Encouraging people to re-use containers they already have.</li>
+                                </ul>
+                                <h3 class="item-intro text-muted">For you this means…</h3>
+                                <p>A way to buy as little as you need or as much as you want – and save money.</p>
+                                <button type="button" class="btn btn-primary center-block" data-dismiss="modal"><i class="fa fa-times"></i> Back to hiSbe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <!-- Sell Modal 8 -->
+    <div class="portfolio-modal modal fade" id="sellModal8" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Free-from</h2>
+                                <img class="img-responsive img-centered img-circle" src="img/sell/freefrom.jpg" alt="">
+                                <p>We sell many gluten-free, wheat free and dairy free products for people who have food intolerances and, increasingly, for customers who don’t have the allergy issues, but just want to try some of these alternatives because they taste so good!</p>
+                                <button type="button" class="btn btn-primary center-block" data-dismiss="modal"><i class="fa fa-times"></i> Back to hiSbe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <!-- Sell Modal 9 -->
+    <div class="portfolio-modal modal fade" id="sellModal9" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Drinks</h2>
+                                <img class="img-responsive img-centered img-circle" src="img/sell/drinks.jpg" alt="">
+                                <p>You’ll find only the more healthy and ethical juices and fizzy drinks brands in our store. Our beers are also responsibly sourced, mostly from local and UK breweries. For our wines we prioritise organic, fairtrade and sulphur-free brands.</p>
+                                <button type="button" class="btn btn-primary center-block" data-dismiss="modal"><i class="fa fa-times"></i> Back to hiSbe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <!-- Sell Modal 10 -->
+    <div class="portfolio-modal modal fade" id="sellModal10" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Household</h2>
+                                <img class="img-responsive img-centered img-circle" src="img/sell/household.jpg" alt="">
+                                <p>We stock cleaning and toiletry brands that are the best in their field for being planet-friendly and responsible. We sell all your household staples in bulk: just bring your empty bottles back to the shop and refill them straight out of our taps!</p>
+                                <button type="button" class="btn btn-primary center-block" data-dismiss="modal"><i class="fa fa-times"></i> Back to hiSbe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <!-- Sell Modal 11 -->
+    <div class="portfolio-modal modal fade" id="sellModal11" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Frozen</h2>
+                                <img class="img-responsive img-centered img-circle" src="img/sell/frozen.jpg" alt="">
+                                <p>We carry healthier brands of frozen food than you would normally find in the big supermarkets, with products for both meat eaters and vegetarians, including ready meals, fruit and veg, pies, pastry, burgers, sausages, meat and fish.</p>
+                                <button type="button" class="btn btn-primary center-block" data-dismiss="modal"><i class="fa fa-times"></i> Back to hiSbe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <!-- Sell Modal 12 -->
+    <div class="portfolio-modal modal fade" id="sellModal12" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Cafe</h2>
+                                <img class="img-responsive img-centered img-circle" src="img/sell/cafe.jpg" alt="">
+                                <h3 class="item-intro text-muted">Welcome to hiSbean!</h3>
+                                <p>Our coffee has never been better thanks to our trained baristas</p>
+                                <p>hiSbean offers a great line of hot and cold drinks and some lovely grab-and-go food for snack-time and lunch-time. Our sausage rolls, doughnuts, cakes, brownies and cookies are all handmade by local suppliers in Brighton and Hove.</p>
+                                <p>Grab one of our loyalty cards for the chance to earn a hiSbe voucher book or just a tasty free coffee.</p>
+                                <p>When you buy food and drink in the Coffee Bar you’re helping us to keep the prices low on the food in the supermarket.</p>
+                                <button type="button" class="btn btn-primary center-block" data-dismiss="modal"><i class="fa fa-times"></i> Back to hiSbe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HISBE WAY MODALS -->
+
+    <!-- Portfolio Modal 1 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Go local</h2>
+                                <h3 class="item-intro text-muted">For a happy community</h3>
+                                <img class="img-responsive img-centered" src="img/portfolio/golocal.png" alt="">
+                                <p>Food that’s farmed or produced in your area is freshest and hasn’t had to travel so far.</p>
+                                <p>Where possible and where the quality exists, we choose to source from producers/growers based locally.</p>
+                                <p>Looking to Sussex-based suppliers first helps us provide a boost to the local economy and reduces unnecessary food miles.</p>
+                                <p>It also means working more directly so we know exactly where and how the food has been produced.</p>
+                                <button type="button" class="btn btn-primary center-block" data-dismiss="modal"><i class="fa fa-times"></i> Back to hiSbe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 2 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <h2>Pick seasonal</h2>
+                                <h3 class="item-intro text-muted">For happy growing</h3>
+                                <img class="img-responsive img-centered" src="img/portfolio/pickseasonal.png" alt="">
+                                <p>Making the most of fruit and vegetables that are in season here means relying less on flying things in from abroad.</p>
+                                <p>Growing foods out of their natural season often creates extra cost and is energy intensive.</p>
+                                <p>We prioritise British produce that’s grown in season so we can bring you nature’s best while still offering great variety from season to season.</p>
+                                <button type="button" class="btn btn-primary center-block" data-dismiss="modal"><i class="fa fa-times"></i> Back to hiSbe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 3 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Protect nature</h2>
+                                <h3 class="item-intro text-muted">For a happy planet</h3>
+                                <img class="img-responsive img-centered" src="img/portfolio/protectnature.png" alt="">
+                                <p>Food is naturally more nutritious and healthy when it’s made using soil friendly farming methods that protect and help the earth rather than harming it.</p>
+                                <p>We promote farming practices that protect nature, are GM-free and avoid unnecessary chemicals.</p>
+                                <button type="button" class="btn btn-primary center-block" data-dismiss="modal"><i class="fa fa-times"></i> Back to hiSbe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 4 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Support ethical</h2>
+                                <h3 class="item-intro text-muted">For happy farmers</h3>
+                                <img class="img-responsive img-centered" src="img/portfolio/supportethical.png" alt="">
+                                <p>Farmers and producers here and abroad need to get a fair deal and make a dignified living.</p>
+                                <p>We consider the people behind the products when sourcing, we work directly with farmers and producers where possible and support fairer supply chains and fairly traded products.</p>
+                                <button type="button" class="btn btn-primary center-block" data-dismiss="modal"><i class="fa fa-times"></i> Back to hiSbe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 5 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Think welfare</h2>
+                                <h3 class="item-intro text-muted">For happy animals</h3>
+                                <img class="img-responsive img-centered" src="img/portfolio/thinkwelfare.png" alt="">
+                                <p>Intensive factory farming produces cheap meat and dairy products with big knock on costs to the environment, animal welfare and our own health.</p>
+                                <p>We source from local farms that prioritise welfare, don’t feed their animals growth hormones and unecessary antibiotics and don’t put their products through extra processing to bulk them out or alter appearance.</p>
+                                <button type="button" class="btn btn-primary center-block" data-dismiss="modal"><i class="fa fa-times"></i> Back to hiSbe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 6 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Save fish</h2>
+                                <h3 class="item-intro text-muted">For happy seas</h3>
+                                <img class="img-responsive img-centered" src="img/portfolio/savefish.png" alt="">
+                                <p>Certain fish stocks have been so intensively fished that they are becoming extinct, other types are discarded (thrown back in the sea dead) in their millions.</p>
+                                <p>We ensure that our fish is sourced from sustainably managed stocks, is caught in a way that causes minimal damage to the marine environment and reduces the impact of discards.</p>
+                                <button type="button" class="btn btn-primary center-block" data-dismiss="modal"><i class="fa fa-times"></i> Back to hiSbe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 7 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Consider waste</h2>
+                                <h3 class="item-intro text-muted">For a happy environment</h3>
+                                <img class="img-responsive img-centered" src="img/portfolio/considerwaste.png" alt="">
+                                <p>In the UK we throw away a third of the food we buy and so much packaging that we’re running out of landfill sites.</p>
+                                <p>We reduce packaging and use compostable alternatives, and help you buy food in smaller quantities.</p>
+                                <p>We also don’t throw away any food that can be eaten.</p>
+                                <button type="button" class="btn btn-primary center-block" data-dismiss="modal"><i class="fa fa-times"></i> Back to hiSbe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 8 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Choose real</h2>
+                                <h3 class="item-intro text-muted">For happy bodies</h3>
+                                <img class="img-responsive img-centered" src="img/portfolio/choosereal.png" alt="">
+                                <p>It’s healthier and better value to buy fresh food instead of mass produced products with ingredients lists that look like a chemistry lesson, and that take loads of energy to produce.</p>
+                                <p>We sell proper food with healthy ingredients that avoid unnecessary or harmful additives.</p>
+                                <button type="button" class="btn btn-primary center-block" data-dismiss="modal"><i class="fa fa-times"></i> Back to hiSbe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" integrity="sha384-mE6eXfrb8jxl0rzJDBRanYqgBxtJ6Unn4/1F7q4xRRyIw7Vdg9jP4ycT7x1iVsgb" crossorigin="anonymous"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/agency.min.js"></script>
+
+</body>
+
+</html>
